@@ -12,6 +12,13 @@ import './properties.scss';
 
 const columns = [{
   dataField: 'name',
+  formatter: (_, row) => {
+    return (
+      <Link key={row.id} to={`/manage/property/${row.id}`}>
+        {row.name}
+      </Link>
+    );
+  },
   text: 'Name',
   sort: true,
   headerStyle: () => {
